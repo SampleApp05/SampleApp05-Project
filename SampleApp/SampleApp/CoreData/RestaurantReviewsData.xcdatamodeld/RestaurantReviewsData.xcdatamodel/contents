@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="RestaurantData" representedClassName="RestaurantData" syncable="YES">
+        <attribute name="restaurantID" optional="YES" attributeType="String"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReviewData"/>
+        <fetchIndex name="indexById">
+            <fetchIndexElement property="restaurantID" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ReviewData" representedClassName="ReviewData" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="restaurantID" optional="YES" attributeType="String"/>
+        <relationship name="restaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RestaurantData"/>
+        <fetchIndex name="indexById">
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+            <fetchIndexElement property="restaurantID" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
