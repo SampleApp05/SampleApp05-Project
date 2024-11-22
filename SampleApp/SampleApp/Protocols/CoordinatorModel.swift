@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol CoordinatorModel {
     associatedtype T: BaseCoordinator
     var coordinator: T? { get }

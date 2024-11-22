@@ -55,9 +55,9 @@ struct InputView: View {
                 .animation(.easeInOut(duration: 0.25), value: shouldShowFullPlaceholder)
             }
         }
-        .onChange(of: isFocused) { (value) in
-            guard isEditing != value else { return }
-            isEditing = value
+        .onChange(of: isFocused) {
+            guard isEditing != isFocused else { return }
+            isEditing = isFocused
         }
     }
 }

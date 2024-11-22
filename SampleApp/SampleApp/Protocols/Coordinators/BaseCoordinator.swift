@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 
+@MainActor
 protocol BaseCoordinator: AnyObject {
     var parent: BaseCoordinator? { get }
     var children: [BaseCoordinator] { get set }

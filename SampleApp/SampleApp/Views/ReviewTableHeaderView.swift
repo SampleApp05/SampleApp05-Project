@@ -45,7 +45,7 @@ class ReviewTableHeaderView: UITableViewHeaderFooterView {
         button.titleLabel?.font = .systemFont(ofSize: 14)
         button.backgroundColor = .accent
         button.setTitleColor(.main, for: .normal)
-        button.contentEdgeInsets = .init(vertical: 10, horizonal: 10)
+//        button.contentEdgeInsets = .init(vertical: 10, horizonal: 10)
         button.rounded(radius: 10)
     }
     

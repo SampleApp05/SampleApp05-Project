@@ -41,8 +41,11 @@ class RestaurantFlowCoordinator: BaseCoordinator {
     
     func start() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.main]
-        navigationController.tabBarItem = .init(title: "Account", image: .init(systemName: "house"), selectedImage: .init(systemName: "house.fill"))
-        let homeController = RestaurantListViewController(model: model)
+        navigationController.tabBarItem = .init(title: "Home", image: .init(systemName: "house"), selectedImage: .init(systemName: "house.fill"))
+        
+        #warning("Edit homeController to view SwiftUI/UIKit versions")
+        let homeController = HostController<RestaurantListView>(model: model)
+        //let homeController = RestaurantListViewController(model: model)
         
         navigationController.pushViewController(homeController, animated: true)
     }

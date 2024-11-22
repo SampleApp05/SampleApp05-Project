@@ -9,10 +9,10 @@ import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
     @IBOutlet private var iconImageView: UIImageView!
+    @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var ratingLabel: UILabel!
     @IBOutlet private var commentLabel: UILabel!
     @IBOutlet private var dateLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
@@ -33,6 +33,9 @@ class ReviewTableViewCell: UITableViewCell {
     func configure(variant: ReviewVariant, rating: String, comment: String, date: String) {
         iconImageView.image = .init(systemName: variant.imageName)?.withRenderingMode(.alwaysTemplate)
         iconImageView.tintColor = variant.tintColor
+        
+        titleLabel.textColor = variant.tintColor
+        titleLabel.text = variant.title
         
         ratingLabel.textColor = variant.tintColor
         ratingLabel.text = rating

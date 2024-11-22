@@ -8,7 +8,8 @@
 import UIKit
 import Photos
 
-class RestaurantsViewModel: CoordinatorModel, EditRestaurantViewModel {
+@Observable
+final class RestaurantsViewModel: CoordinatorModel, EditRestaurantViewModel, ObservableObject {
     private(set) var requestStatus: RequestStatus = .notStarted
     let injected: Injected
     var editingName: String?
@@ -33,7 +34,13 @@ class RestaurantsViewModel: CoordinatorModel, EditRestaurantViewModel {
     var restaurantService: RestaurantDataService { injected.restaurantService }
     var coreDataService: CoreDataService { injected.coreDataService }
     
-    var isLoading: Bool { requestStatus == .inProgress }
+    var shouldShowLoadingView: Bool { requestStatus == .inProgress  && restaurants.isEmpty }
+    
+    var swipeActions: [UIContextualAction.Variant] {
+        guard injected.account?.isAdmin == true else { return [] }
+        
+        return UIContextualAction.Variant.allCases
+    }
     
     init(coordinator: RestaurantFlowCoordinator? = nil, injeted: Injected) {
         self.coordinator = coordinator
@@ -74,6 +81,10 @@ class RestaurantsViewModel: CoordinatorModel, EditRestaurantViewModel {
         return try? await restaurantService.fetchPhoto(path: path)
     }
     
+    func imageURL(for path: String) async -> URL? {
+        await restaurantService.imageURL(for: path)
+    }
+    
     func deleteRestaurant(at index: Int) {
         guard requestStatus != .inProgress else { return }
         requestStatus = .inProgress
@@ -103,6 +114,25 @@ class RestaurantsViewModel: CoordinatorModel, EditRestaurantViewModel {
     
     func didTapCell(at index: Int) {
         coordinator?.navigate(to: .details(restaurant: restaurants[index]))
+    }
+    
+    func showRestaurantDetails(for restaurant: Restaurant) {
+        coordinator?.navigate(to: .details(restaurant: restaurant))
+    }
+    
+    func showRestaurantFeedback(for restaurant: Restaurant) {
+        coordinator?.navigate(to: .feedback(restaurant: restaurant))
+    }
+    
+    func swipeAction(for variant: UIContextualAction.Variant, restaurant: Restaurant) {
+        guard let index = restaurants.firstIndex(of: restaurant) else { return }
+        
+        switch variant {
+        case .edit:
+            editRestaurant(at: index)
+        case .delete:
+            deleteRestaurant(at: index)
+        }
     }
     
     func didTapAddButton() {

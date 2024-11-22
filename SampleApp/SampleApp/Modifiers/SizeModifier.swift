@@ -21,9 +21,9 @@ struct SizeModifier: ViewModifier {
                         .onAppear {
                             size = proxy.size
                         }
-                        .onChange(of: proxy.size, perform: { value in
+                        .onChange(of: proxy.size) {
                             size = proxy.size
-                        })
+                        }
                 }
             )
     }

@@ -11,6 +11,7 @@ import FirebaseStorage
 
 protocol RestaurantDataService {
     func fetchRestaurants() async throws -> [Restaurant]
+    func imageURL(for path: String) async -> URL?
     func fetchPhoto(path: String) async throws -> UIImage?
     func storeRestaurants(_ data: [Restaurant]) async throws
     
@@ -34,6 +35,11 @@ class RestaurantService: RestaurantDataService {
         let _ = try await imageRef.putDataAsync(data)
         
         return try await imageRef.downloadURL().absoluteString
+    }
+    
+    func imageURL(for path: String) async -> URL? {
+        let imageRef = storageRef.child("images/\(path)")
+        return try? await imageRef.downloadURL()
     }
     
     func fetchPhoto(path: String) async throws -> UIImage? {
