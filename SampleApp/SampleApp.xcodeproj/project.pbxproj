@@ -103,7 +103,6 @@
 		8B7807412B714F9100AEAEDA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7807402B714F9100AEAEDA /* FirebaseAuth */; };
 		8B7807452B7157AF00AEAEDA /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7807442B7157AF00AEAEDA /* String+Helper.swift */; };
 		8B7807492B71617E00AEAEDA /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7807482B71617E00AEAEDA /* Injected.swift */; };
-		8B8BBE1B2CEFAD66001E6608 /* EditRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8BBE1A2CEFAD66001E6608 /* EditRestaurantView.swift */; };
 		8BC6B8612B82644400064EEE /* Double+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6B8602B82644400064EEE /* Double+Helper.swift */; };
 		8BC6B8662B8277FA00064EEE /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6B8642B8277FA00064EEE /* UsersViewController.swift */; };
 		8BC6B86B2B82785E00064EEE /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC6B86A2B82785E00064EEE /* UserTableViewCell.xib */; };
@@ -226,7 +225,6 @@
 		8B78070D2B70EF6800AEAEDA /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		8B7807442B7157AF00AEAEDA /* String+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		8B7807482B71617E00AEAEDA /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
-		8B8BBE1A2CEFAD66001E6608 /* EditRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRestaurantView.swift; sourceTree = "<group>"; };
 		8BC6B8602B82644400064EEE /* Double+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Helper.swift"; sourceTree = "<group>"; };
 		8BC6B8642B8277FA00064EEE /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		8BC6B86A2B82785E00064EEE /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -583,7 +581,6 @@
 			isa = PBXGroup;
 			children = (
 				8B46BE0B2B7BDAFF0004C826 /* CheckboxView.swift */,
-				8B8BBE1A2CEFAD66001E6608 /* EditRestaurantView.swift */,
 				8B050B0E2B79511D0053E6D7 /* InputView.swift */,
 				8B050B102B7951470053E6D7 /* InputView+Variant.swift */,
 				8B3302042CF0A0A3001DE0A2 /* RestaurantListView.swift */,
@@ -795,7 +792,6 @@
 				8B54E31F2B6D139D007C96BB /* AppDelegate.swift in Sources */,
 				8B46BE952B7E6EBB0004C826 /* RestaurantService.swift in Sources */,
 				8B46BE0E2B7BECC70004C826 /* RequestStatus.swift in Sources */,
-				8B8BBE1B2CEFAD66001E6608 /* EditRestaurantView.swift in Sources */,
 				8B050B0B2B794BA00053E6D7 /* CoordinatorModel.swift in Sources */,
 				8B46BE2C2B7E15920004C826 /* AccountView.swift in Sources */,
 				8B050B1E2B79594C0053E6D7 /* EnvironmentValues+Helper.swift in Sources */,
