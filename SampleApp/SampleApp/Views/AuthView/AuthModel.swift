@@ -8,7 +8,8 @@
 import Foundation
 import FirebaseAuth
 
-class AuthModel<Service: AuthenticationService, Coordinator: BaseCoordinator & AccountObserver>: ObservableObject, AuthViewModel {
+@MainActor
+final class AuthModel<Service: AuthenticationService, Coordinator: BaseCoordinator & AccountObserver>: ObservableObject, AuthViewModel {
     let service: Service
     weak var coordinator: Coordinator?
     

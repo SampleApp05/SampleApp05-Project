@@ -16,7 +16,7 @@ enum DetailsVariant {
         case .condensed:
             return "Show all"
         case .full:
-            return "Show less"
+            return "Show relevant"
         }
     }
     

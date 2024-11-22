@@ -26,6 +26,19 @@ enum ReviewVariant {
         }
     }
     
+    var title: String? {
+        switch self {
+        case .plain:
+            return nil
+        case .positive:
+            return "Best"
+        case .negative:
+            return "Worst"
+        case .latest:
+            return "Most recent"
+        }
+    }
+    
     var imageName: String {
         switch self {
         case .plain:

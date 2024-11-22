@@ -67,13 +67,13 @@ extension EditRestaurantViewModel {
                 print("Error storing restaurant: \(error.localizedDescription)")
                 
                 selectedRestaurant = nil
-                coordinator?.popBack()
+                await coordinator?.popBack()
             }
             
             coreDataService.storeRestaurant(id: restaurantId)
             restaurants = updatedRestaurants
             selectedRestaurant = nil
-            coordinator?.popBack()
+            await coordinator?.popBack()
         }
     }
 }

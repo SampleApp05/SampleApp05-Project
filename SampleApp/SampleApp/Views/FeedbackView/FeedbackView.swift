@@ -116,10 +116,10 @@ struct FeedbackView: CoordinatorModelView {
         }
         .background(Color.accentColor, ignoresSafeAreaEdges: model.variant.ignoreEdgeInsets)
         .animation(.easeInOut, value: model.rating)
-        .onChange(of: model.rating) { (_) in
+        .onChange(of: model.rating) {
             model.displayRating = .init(rawValue: Int(model.rating))
         }
-        .onChange(of: model.comment) { (_) in
+        .onChange(of: model.comment) {
             guard model.remainingCharecters <= 0 else { return }
             model.comment = String(model.comment.prefix(model.characterLimit))
         }

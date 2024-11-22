@@ -65,6 +65,7 @@ class UserTableViewCell: UITableViewCell {
         [aliasLabel, hasAdminPriviligesLabel].forEach {
             $0?.font = .systemFont(ofSize: 18, weight: .medium)
             $0?.textColor = .main
+            $0?.numberOfLines = 0
         }
     }
     
@@ -73,7 +74,7 @@ class UserTableViewCell: UITableViewCell {
         updateButton.titleLabel?.font = .systemFont(ofSize: 16)
         updateButton.backgroundColor = .main
         updateButton.setTitleColor(.accent, for: .normal)
-        updateButton.contentEdgeInsets = .init(vertical: 10, horizonal: 10)
+//        updateButton.contentEdgeInsets = .init(vertical: 10, horizonal: 10)
         updateButton.rounded(radius: 8)
         
         updateButtonState(enabled: false)

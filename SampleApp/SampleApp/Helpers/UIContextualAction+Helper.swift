@@ -8,9 +8,9 @@
 import UIKit
 
 extension UIContextualAction {
-    enum Variant {
-        case delete
+    enum Variant: String, CaseIterable {
         case edit
+        case delete
         
         var style: UIContextualAction.Style {
             switch self {

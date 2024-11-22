@@ -64,12 +64,12 @@ class EditRestaurantViewController<T: EditRestaurantViewModel>: UIViewController
     private func configureButtons() {
         selectImageButton.setTitle("Select Image")
         selectImageButton.titleLabel?.font = .systemFont(ofSize: 10)
-        selectImageButton.contentEdgeInsets = .init(vertical: 0, horizonal: 10)
+//        selectImageButton.contentEdgeInsets = .init(vertical: 0, horizonal: 10)
         
         submitButton.setTitle("Submit")
         submitButton.titleLabel?.font = .systemFont(ofSize: 20)
         submitButton.isEnabled = false
-        submitButton.contentEdgeInsets = .init(vertical: 8, horizonal: 8)
+//        submitButton.contentEdgeInsets = .init(vertical: 8, horizonal: 8)
         submitButton.alpha = 0.65
         
         [selectImageButton, submitButton].forEach {

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol AuthViewModel: CoordinatorModel & ObservableObject {
     associatedtype Service: AuthenticationService
     

@@ -141,17 +141,17 @@ struct AuthView<T: AuthViewModel>: CoordinatorModelView {
             guard model.email.isNotEmpty else { return }
             model.validate(.email)
         }
-        .onChange(of: focusField) { (value) in
+        .onChange(of: focusField) { (value, _) in
             guard model.requestStatus == .error, value != nil else { return }
             model.requestStatus = .notStarted
         }
-        .onChange(of: model.email) { (email) in
+        .onChange(of: model.email) {
             model.validate(.email)
         }
-        .onChange(of: model.password) { (_) in
+        .onChange(of: model.password) {
             model.validate(.password)
         }
-        .onChange(of: model.adminCode) { (_) in
+        .onChange(of: model.adminCode) {
             model.validate(.adminPermission)
         }
         .toolbar {
